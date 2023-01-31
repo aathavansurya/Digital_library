@@ -1,0 +1,38 @@
+{% extends 'navbar2.html' %}
+{% block  content %}
+<div>
+
+        {% csrf_token %}
+    <table align="center" cellpadding="8" border="1" style="background-color:grey;color:white">
+     <marquee direction="up"><h2 align="center" style="text-shadow:2px 2px 1px green;color:red;">Hi.. {{data.S_name}}</h2>
+</marquee> <br>
+    <tr>
+        <td><b style="color:black">User Name:</b></td>
+        <td>{{data.S_name}}</td>
+    </tr>
+      <tr>
+        <td><b style="color:black">Semester:</b></td>
+        <td>{{data.S_semester}}</td>
+    </tr>
+      <tr>
+        <td><b style="color:black">Phone No:</b></td>
+        <td>{{data.S_phone}}</td>
+    </tr>
+      <tr>
+        <td><b style="color:black">Course:</b></td>
+        <td>{{data.S_course_id}}</td>
+    </tr>
+          <tr>
+        <td><b style="color:black">Password:</b></td>
+        <td>{{data.S_password}}</td>
+    </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="{% url 'edit' %}" ><b style="color:purple">Edit Profile</b></a>
+            </td>
+        </tr>
+</table>
+
+</div>
+{% endblock %}

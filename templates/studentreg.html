@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url(https://c8.alamy.com/comp/ER564D/3d-renderer-illustration-white-people-writing-registration-on-notebook-ER564D.jpg);background-repeat:no-repeat;background-size=100%">
+<form action="studentreg" method="post">
+    {% csrf_token %}
+   <h3 align="center">{{ data }}</h3>
+    <h2 align="center"><u><b>Student Registration</b></u></h2>
+    <table align="center"  cellpadding="8" style="background-color:blue;color:white" >
+        <tr>
+            <td>
+                <b>NAME:</b>
+            </td>
+            <td>
+                <input type="text" name="stname"   required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <b> PHONE:</b>
+            </td>
+            <td>
+                <input type="number"  pattern="[6-9]{1}[0-9]{9}"   required name="stph" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>SEMESTER:</b>
+            </td>
+            <td>
+                <input type="number" min="1" max="8" name="stsem"   required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <b> PASSWORD:</b>
+            </td>
+            <td>
+                <input type="password" name="stpass"   required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <b> COURSE:</b>
+            </td>
+            <td>
+                <SELECT name="ddlcourse">
+                    {% for i in data1 %}
+                    <option>{{i.course_name}}</option>
+                    {% endfor %}
+                </SELECT>
+            </td>
+        </tr>
+        <tr><td></td>
+            <td>
+                <input type="submit" value="Register" style="background-color:blue;color:white">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

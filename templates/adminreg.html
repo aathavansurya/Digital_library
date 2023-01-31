@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url(https://www.womenbuildingaustralia.com.au/sites/default/files/images/Poly_BG_Grad%20%281%29_0_1.png);background-repeat:no-repeat;background-size:100%">
+<form action="adred" method="post">
+    {% csrf_token %}
+  <h2 align="center">{{data}}</h2>
+
+
+
+  <table align="center"  cellpadding="8">
+      <caption>        <img src='static/image/png.png' align="center" height="50px">
+      <br>      <h2 align="center"><u>Admin Registration</u></h2></caption>
+
+    <tr>
+      <td>
+          <b>User Name:</b>
+      </td>
+      <td><input type="text" name="adname" required></td>
+    </tr>
+     <tr>
+      <td>
+        <b>Email:</b>
+      </td>
+      <td><input type="email" name="ademail" required></td>
+    </tr>
+     <tr>
+      <td>
+       <b> Password:</b>
+      </td>
+      <td><input type="password" name="adpas" required></td>
+    </tr>
+    <tr><td></td><td><input type="submit" value="Register" style="background-color:purple;color:white"></td></tr>
+
+  </table><br>
+
+
+</form>
+</body>
+</html>

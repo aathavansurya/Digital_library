@@ -1,0 +1,71 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<marquee direction="right"  ><h2 align="center" style="color:blue;text-shadow:2px 2px 20px blue">Assign Books For Students Here....</h2></marquee>
+ <div>
+     <table align="center" border="2" cellpadding="8" >
+      <form action="sc" method="post">
+        {% csrf_token %}
+            <tr>
+                <td>
+                   <b> Student Semester:</b>
+                </td>
+                <td>
+                    <input type="number" name="stsem" min="1" max="8" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Student Course:</b>
+                </td>
+                    <td>
+                        <select required name="crs">
+                            {% for i in data %}
+                            <option>{{ i.course_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+            <tr><td></td><td><input type="submit" value="Search" style="background-color:grey;color:white"></td></tr>
+    </form>
+ </div>
+
+    <div>
+        <form action="assignred" method="post">
+    {% csrf_token %}
+
+    <tr>
+        <td><b>Student Name:</b></td>
+        <td><select name="stname">
+        {% for i in data2 %}
+            <option>{{ i.S_name }}</option>
+            {% endfor %}
+        </select> </td>
+    </tr>
+     <tr>
+         <td><b>Book Name:</b></td>
+        <td><select required name="bkname">
+        {% for i in data1 %}
+            <option>{{ i.B_name }}</option>
+            {% endfor %}
+        </select> </td>
+    </tr>
+      <tr>
+          <td><b>Start Date:</b></td>
+        <td><input type="date" name="st_date" required> </td>
+    </tr>
+      <tr>
+          <td><b>End Date:</b></td>
+        <td><input type="date" name="end_date" required> </td>
+    </tr>
+    <tr><td></td>
+        <td>
+            <input type="submit" value="Assign Book" style="background-color:grey;color:white">
+        </td>
+    </tr>
+
+
+   </table>
+
+    </form>
+    </div>
+{% endblock %}

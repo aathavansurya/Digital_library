@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<form action="redbook" method="post">
+  {% csrf_token %}
+  <h2 align="center"><u>Add Book & Details</u></h2>
+  <table align="center" cellpadding="8"  border="2">
+    <tr>
+      <td>
+       <b> Book Name:</b>
+      </td>
+      <td>
+               <b> <input type="text" name="bkname" required></b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       <b> Author Name:</b>
+      </td>
+      <td>
+                <input type="text" name="atname" required>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       <b> Course:</b>
+      </td>
+      <td>
+        <select name="ddlcourse">
+          {% for i in data%}
+          <option>{{i.course_name}}</option>
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr><td></td><td><input type='submit' value="Submit" style="background-color:grey;color:white"></td></tr>
+  </table>
+</form>
+{% endblock %}
