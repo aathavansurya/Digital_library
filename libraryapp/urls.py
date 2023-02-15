@@ -34,8 +34,8 @@ urlpatterns=[
                                                   # to that same student  home page
     path('stdhome',views.stdhome,name='std_home'),
 
-    path('dispro',views.disprofile,name='profile'),
-    path('edit',views.edit,name='edit'),
+    path('dispro',views.disprofile,name='profile'), # it will display the profile of the student
+    path('edit',views.edit,name='edit'), # it will take to edit page of the profile of the student...
 
 
 ]

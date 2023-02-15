@@ -105,7 +105,6 @@ def delete(request,id):
 
 
 def logout(request):
-    logout(request)
     return redirect('login')
 
 def assign(request):
