@@ -17,7 +17,6 @@ def login(request):
 def readlog(request):
     name = request.POST['tbname']
     password = request.POST['tbpas']
-
     user = authenticate(username=name,password=password)
     if user is not None:
         if user.is_superuser:
